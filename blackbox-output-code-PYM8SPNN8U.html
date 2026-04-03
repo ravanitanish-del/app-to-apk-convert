@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web2APK - Convert Website to Android APK</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <h1>Web2APK</h1>
+            </div>
+            <p>Convert any website to Android APK in seconds</p>
+        </header>
+
+        <!-- Main Converter Section -->
+        <main class="converter-section">
+            <div class="card">
+                <div class="input-group">
+                    <label for="websiteUrl"><i class="fas fa-globe"></i> Website URL</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-link"></i>
+                        <input type="url" id="websiteUrl" placeholder="https://example.com" required>
+                    </div>
+                </div>
+
+                <div class="options-group">
+                    <div class="option-row">
+                        <div class="option-item">
+                            <label class="switch">
+                                <input type="checkbox" id="fullscreen">
+                                <span class="slider"></span>
+                            </label>
+                            <span>Fullscreen</span>
+                        </div>
+                        <div class="option-item">
+                            <label class="switch">
+                                <input type="checkbox" id="statusbar" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Status Bar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-details">
+                    <div class="detail-row">
+                        <div class="input-group small">
+                            <label for="appName">App Name</label>
+                            <input type="text" id="appName" placeholder="My Web App" value="My Web App">
+                        </div>
+                        <div class="input-group small">
+                            <label for="packageName">Package Name</label>
+                            <input type="text" id="packageName" placeholder="com.myapp.web" value="com.myapp.web">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="convert-btn" onclick="convertToAPK()">
+                    <i class="fas fa-rocket"></i>
+                    <span>Convert to APK</span>
+                    <div class="progress" id="progressBar"></div>
+                </button>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2><i class="fas fa-star"></i> Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate APK in under 30 seconds</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Your data is encrypted and never stored</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-android"></i>
+                    <h3>Native Feel</h3>
+                    <p>Full Android integration with permissions</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Unlimited</h3>
+                    <p>Free conversions with no limits</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section" id="downloadSection" style="display: none;">
+            <div class="success-card">
+                <i class="fas fa-check-circle"></i>
+                <h2>APK Ready!</h2>
+                <p>Your Android app has been generated successfully</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn primary" id="downloadLink" download>
+                        <i class="fas fa-download"></i>
+                        Download APK (15MB)
+                    </a>
+                    <button class="download-btn secondary" onclick="newConversion()">
+                        <i class="fas fa-plus"></i>
+                        New Conversion
+                    </button>
+                </div>
+                <div class="qr-code">
+                    <canvas id="qrCode"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Web2APK. Convert websites to native Android apps instantly.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
